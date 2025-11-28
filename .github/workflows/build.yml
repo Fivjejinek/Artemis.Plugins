@@ -20,4 +20,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: plugins
-          path: src/**/bin/Release/net*/publish/
+          path: |
+            src/*/bin/Release/net*/publish/

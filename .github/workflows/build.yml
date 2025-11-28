@@ -16,6 +16,9 @@ jobs:
       - name: Install Plugin Uploader
         run: dotnet tool install ArtemisRGB.Tools.PluginUploader --global
 
+      - name: List publish outputs
+        run: dir src /s
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:

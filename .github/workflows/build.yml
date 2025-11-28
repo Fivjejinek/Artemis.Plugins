@@ -17,10 +17,11 @@ jobs:
         run: dotnet tool install ArtemisRGB.Tools.PluginUploader --global
 
       - name: List publish outputs
-        run: Get-ChildItem -Path src -Recurse
+        run: Get-ChildItem -Path src -Recurse | Select-Object FullName
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: plugins
-          path: src/*/bin/Release/net*/publish/
+          path: |
+            src/*/bin/x64/Release/net*/publish/
